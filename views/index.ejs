@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Book Lending</title>
+  </head>
+  <body>
+    <h1>Book Lending</h1>
+
+    <form action="/books" method="POST">
+      <input type="text" name="book" placeholder="Book">
+      <input type="text" name="author" placeholder="Author">
+      <select name="owner">
+        <option value="Mari">Mari</option>
+        <option value="Gabi">Gabi</option>
+        <option value="Reuza">Reuza</option>
+        <option value="Bia">Bia</option>
+      </select>
+      <button type="submit">Save</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Book</th>
+          <th>Author</th>
+          <th>Owner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% books.forEach(book => { %>
+          <tr>
+            <td><%= book.book %></td>
+            <td><%= book.author %></td>
+            <td><%= book.owner %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </body>
+</html>
