@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const admin = require('firebase-admin');
+const path = require('path');
 
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
 app.set('view engine', 'ejs');
 
 var serviceAccount = require("./keys/serviceAccountKey.json");
